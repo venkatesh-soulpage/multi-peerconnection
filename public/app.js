@@ -77,7 +77,6 @@ var VideoChat = {
     video.setAttribute("data-socket", id);
     video.srcObject = event.stream;
     video.autoplay = true;
-    video.muted = true;
     video.playsinline = true;
 
     document.querySelector("#remoteVideo").appendChild(video);
