@@ -16,17 +16,20 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="videos">
-      <div>
-        <video id="localVideo" autoplay muted playsinline></video>
-        <!-- <div class="soundbar"><span class="currentVolume"></span></div> -->
+    <div class="container-fluid">
+      <div class="row">
+        <video class="col-md-9" autoplay id="localVideo"></video>
+
+        <div class="col-md-3" id="remoteVideo"></div>
+      </div>
+      <div class="row">
+        <button class="btn btn-primary" id="get-video">GetVideo</button>
+        <button class="btn btn-success" id="call" disabled>Join</button>
       </div>
     </div>
-
-    <br />
-    <div id="connections"></div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
@@ -45,10 +48,21 @@
       crossorigin="anonymous"
     ></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="script.js"></script>
-    <script type="text/javascript">
-      // VideoChat.requestMediaStream();
-      pageReady();
-    </script>
+    <script src="app.js"></script>
   </body>
 </html>
+
+<!-- 
+<div class="container-fluid">
+  <div class="row">
+    <video autoplay id="localVideo" class="col-md-10"></video>
+
+    <div class="col-md-2" id="remoteVideo"></div>
+  </div>
+  <div class="row">
+    <div>
+      <button class="btn btn-primary" id="get-video">GetVideo</button>
+      <button class="btn btn-success" id="call" disabled>Join</button>
+    </div>
+  </div>
+</div> -->
